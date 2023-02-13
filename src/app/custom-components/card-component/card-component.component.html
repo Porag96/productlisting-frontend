@@ -1,0 +1,45 @@
+<div class="card" style="width: 18rem">
+  <app-carousel-component
+    [images]="product.images"
+    [imgPath]="imgPath"
+  ></app-carousel-component>
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ product.name }}
+    </h5>
+    <h6>{{ product.desc }}</h6>
+    <div class="row">
+      <h6 class="col-md-4">₹{{ product.price }}</h6>
+      <h6 class="col-md-4">sku: {{ product.sku }}</h6>
+      <h6 class="col-md-4" *ngIf="!product.isActive">Out of Stock</h6>
+      <div
+        class="btn-group btn-group-horizontal"
+        role="group"
+        aria-label="Vertical radio toggle button group"
+      >
+        <input
+          type="checkbox"
+          class="btn-check"
+          name="{{ product.id }}"
+          id="{{ product.id }}"
+          (click)="onCheckboxClick(product)"
+          [checked]="product.isActive"
+        />
+        <label class="btn btn-outline-success" for="{{ product.id }}"
+          >Active</label
+        >
+        <input
+          type="checkbox"
+          class="btn-check"
+          name="{{ product.id }}"
+          id="{{ product.id }}"
+          (click)="onCheckboxClick(product)"
+          [checked]="!product.isActive"
+        />
+        <label class="btn btn-outline-danger" for="{{ product.id }}"
+          >Inctive</label
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="container"><h1 class="text-center">Add a Product</h1></div>
+    <div class="mx-auto col-10 col-md-8 col-lg-6">
+      <div *ngIf="alertSuccess">
+        <app-custom-alert [msg]="sucMsg" [class]="sucClass"></app-custom-alert>
+      </div>
+      <div *ngIf="alertFailure">
+        <app-custom-alert [msg]="errMsg" [class]="errClass"></app-custom-alert>
+      </div>
+      <form class="row g-3" (ngSubmit)="onSubmit()">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="name"
+            id="name"
+            name="name"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="price"
+            id="price"
+            name="price"
+          />
+        </div>
+        <div class="col-12">
+          <label for="desc" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="desc"
+            id="desc"
+            name="desc"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="sku" class="form-label">sku</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="sku"
+            id="sku"
+            name="sku"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            class="form-control"
+            type="file"
+            name="images"
+            id="images"
+            multiple
+            (change)="selectImages($event)"
+          />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Add Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
