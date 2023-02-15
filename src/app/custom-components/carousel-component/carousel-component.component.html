@@ -1,8 +1,4 @@
-<div
-  id="carouselExampleControls"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
+<div id="Product{{ productId }}" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img
@@ -23,7 +19,7 @@
     <button
       class="carousel-control-prev"
       type="button"
-      data-bs-target="#carouselExampleControls"
+      [attr.data-bs-target]="'#Product' + productId"
       data-bs-slide="prev"
     >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,7 +28,7 @@
     <button
       class="carousel-control-next"
       type="button"
-      data-bs-target="#carouselExampleControls"
+      [attr.data-bs-target]="'#Product' + productId"
       data-bs-slide="next"
     >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>

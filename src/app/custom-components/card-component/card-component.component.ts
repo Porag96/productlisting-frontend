@@ -10,6 +10,7 @@ import { Product } from 'src/app/Product';
 export class CardComponentComponent {
   @Input() product!: Product;
   @Input() imgPath!: string;
+  @Input() productId!: number;
 
   newData!: boolean;
   constructor(private http: HttpClient) {}

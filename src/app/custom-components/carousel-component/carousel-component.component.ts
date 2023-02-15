@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class CarouselComponentComponent {
   @Input() images!: string[];
   @Input() imgPath!: string;
+  @Input() productId!: number;
 }
