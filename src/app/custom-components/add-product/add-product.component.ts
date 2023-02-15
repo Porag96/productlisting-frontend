@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -24,7 +26,7 @@ export class AddProductComponent {
   sucClass = 'alert alert-success alert-dismissible fade show';
   errClass = 'alert alert-danger alert-dismissible fade show';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   selectImages(event: any) {
     if (event.target.files.length > 0) {
       this.images = event.target.files;
@@ -64,6 +66,7 @@ export class AddProductComponent {
           (res) => {
             this.alertSuccess = true;
             console.log(res);
+            this.router.navigate(['/']);
           },
           (err) => {
             console.log(err);
