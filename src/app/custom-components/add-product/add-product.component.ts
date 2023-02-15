@@ -45,6 +45,9 @@ export class AddProductComponent {
     } else if (this.sku == undefined) {
       this.alertFailure = true;
       this.errMsg = 'SKU should not be empty';
+    } else if (this.sku.length > 8 || this.sku.length < 8) {
+      this.alertFailure = true;
+      this.errMsg = 'SKU should of 8 characters';
     } else {
       for (let img of this.images) {
         formData.append('images', img);
