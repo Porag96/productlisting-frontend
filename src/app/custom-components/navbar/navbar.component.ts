@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  closeNavbar() {
+    const navbarToggler = document.querySelector('.navbar-toggler') as HTMLElement;
+    if (navbarToggler.getAttribute('aria-expanded') === 'true') {
+      navbarToggler.click();
+    }
+  }
 }

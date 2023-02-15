@@ -61,7 +61,7 @@ export class AddProductComponent {
       formData.append('desc', this.desc);
 
       this.http
-        .post<any>('http://localhost:8000/api/v1/product', formData)
+        .post<any>('http://34.135.250.251/api/v1/product', formData)
         .subscribe(
           (res) => {
             this.alertSuccess = true;

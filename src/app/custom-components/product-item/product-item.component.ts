@@ -9,5 +9,5 @@ import { Product } from 'src/app/Product';
 export class ProductItemComponent {
   @Input() product!: Product;
 
-  imgPath: any = 'http://localhost:8000/api/image/';
+  imgPath: any = 'http://34.135.250.251/api/image/';
 }
