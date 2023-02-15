@@ -20,7 +20,7 @@ export class CardComponentComponent {
     console.log(this.newData);
     const data = { isActive: this.newData };
     this.http
-      .put<any>(`http://34.135.250.251/api/v1/update/${product.id}`, data)
+      .put<any>(`http://localhost:8000/api/v1/update/${product.id}`, data)
       .subscribe(
         (res) => {
           console.log(res);

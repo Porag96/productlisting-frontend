@@ -12,7 +12,7 @@ export class ProductsComponent {
 
   checked: boolean = true;
   constructor(private http: HttpClient) {
-    http.get('http://34.135.250.251/api/v1/products').subscribe((res) => {
+    http.get('http://localhost:8000/api/v1/products').subscribe((res) => {
       this.products = res;
     });
   }
